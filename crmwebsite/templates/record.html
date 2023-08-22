@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% comment %} <div class="col-md-6 offset-md-3"> {% endcomment %}
+
+    <div class="card">
+       <h5 class="card-header"><strong>{{customer_record.first_name}} {{customer_record.last_name}}</strong></h5>
+        <div class="card-body">
+        <p class="card-title">
+        <p class="card-title">
+        <strong>Email: </strong>{{customer_record.email}}
+        <p class="card-title">
+        <strong>Phone: </strong>{{customer_record.phone}}
+        <p class="card-title">
+       <strong>Address: </Address></strong> {{customer_record.address}}
+        <p class="card-title">
+        <strong>City: </strong>{{customer_record.city}} 
+        <p class="card-title">
+       <strong>State: </strong> {{customer_record.state}} 
+        <p class="card-title">
+        <strong>Zipcode: </strong>{{customer_record.zipcode}}
+        <p class="card-title"> 
+       <strong>Created At: </strong> {{customer_record.created_at}}
+       <p class="card-title">
+        <strong>ID: </strong> {{customer_record.id}}
+        </p>
+          
+        </div>
+      </div>
+      <br/><br/>
+      <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+      
+      <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
+      
+      <a href="{% url 'update_record' customer_record.id%}" class="btn btn-secondary">Update Record</a>
+          
+  
+        
+{% endblock  %}
